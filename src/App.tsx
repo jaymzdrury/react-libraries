@@ -1,26 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import UseQuery from "./UseQuery";
+import UseForm from './UseForm'
+import {QueryClientProvider, QueryClient} from 'react-query'
+import IfElse from "./IfElse";
+import I18 from './118'
+import WhyDidYouRender from "./WhyDidYouRender";
+const client = new QueryClient()
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <QueryClientProvider client={client}>
+      <UseQuery />
+      <UseForm />
+      <IfElse />
+      <WhyDidYouRender />
+      <I18 />
+    </QueryClientProvider>)
 }
 
 export default App;
